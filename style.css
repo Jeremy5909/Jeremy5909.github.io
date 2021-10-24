@@ -1,0 +1,151 @@
+body {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin: 20px;
+}
+
+body.dark-mode {
+    background-image: url("src/imgs/hacker-bg.jpg");
+    background-color: rgb(24, 24, 24);
+    background-blend-mode: overlay;
+    color: rgb(214, 214, 214);
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: -30px;
+}
+
+.topnav {
+    background-color: rgb(175, 175, 175);
+    overflow: hidden;
+    border-radius: 10px;
+    margin: -10px;
+}
+
+.dark-mode .topnav{
+    background-color: rgb(44, 44, 44);
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dark-mode .topnav a.active {
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+.topnav a.active{
+    background-color: rgb(148, 148, 148);
+}
+
+.switch {
+    float: right;
+    position: relative;
+    margin: 7px;
+    width: 60px;
+    height: 34px
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4;
+    transition: .4;
+    border-radius: 34px;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+form {
+    margin-top: 20px;
+    transition: all 4s ease-in-out;
+}
+
+.form-control {
+    width: 60%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+input {
+    height: 45px;
+}
+
+form .submit {
+    background: #28d66b;
+    border-color: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+form .submit:hover {
+    background-color: #25b45c
+}
+
+.dark-mode form .submit  {
+    background: #107537;
+}
+
+.dark-mode form .submit:hover {
+    background: #176133;
+}
