@@ -12,9 +12,13 @@ body.dark-mode {
     color: rgb(214, 214, 214);
 }
 
-h1 {
+#home {
     margin-top: 30px;
     margin-bottom: -30px;
+}
+
+#about {
+    width: 90%;
 }
 
 .topnav {
@@ -89,7 +93,7 @@ h1 {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
-  border-radius: 50%;
+  border-radius: 90%;
 }
 
 input:checked + .slider {
