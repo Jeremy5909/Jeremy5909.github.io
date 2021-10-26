@@ -24,8 +24,10 @@ body.dark-mode {
 .topnav {
     background-color: rgb(175, 175, 175);
     overflow: hidden;
-    border-radius: 10px;
-    margin: -10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .dark-mode .topnav{
