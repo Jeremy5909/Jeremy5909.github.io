@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    //Top Nav
     $(".topnav a").click(function(){
         $(".topnav a.active").removeClass("active");
         $(this).addClass("active");
