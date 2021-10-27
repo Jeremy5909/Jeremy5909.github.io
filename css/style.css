@@ -39,7 +39,6 @@ div#games{
     background: gray;
     margin-top: 50px;
     margin-bottom: 20px;
-    border-radius: 20px;
 }
 
 /* Tic Tac Toe */
@@ -51,7 +50,7 @@ div#games{
 
 #tictactoe .col {
     width: 32%;
-    height: 145.5px;
+    height: 145.2px;
     border: 3px solid white;
     float: left;
     text-align: center;
@@ -65,9 +64,22 @@ div#games{
     width: 435px;
     padding: 10px;
     margin: 0 auto;
-    background: brown;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    background: rgb(70, 15, 121);
+    mix-blend-mode:lighten;
+    border-radius: 15px;
+}
+
+#tictactoe #panel input {
+    border-radius: 50px;
+    background-color: rgb(252, 252, 252);
+    font-size: 25px;
+}
+
+#tictactoe #panel button {
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: rgb(231, 82, 82);
+    color: white;
 }
 
 #tictactoe #board {
@@ -76,7 +88,23 @@ div#games{
     color: whitesmoke;
     margin-top: 10px;
 }
- */
+ 
+
+/* Checkers */
+#checkers {
+    margin: 40px;
+}
+
+#checkers td {
+    background-color: #BA7A3A;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+}
+
+#checkers .noPieceHere {
+    background-color: #F0D2B4
+}
 
 /* Nav */
 
