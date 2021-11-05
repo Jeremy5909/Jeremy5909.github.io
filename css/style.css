@@ -17,17 +17,26 @@ body.dark-mode {
 }
 
 #home {
-    padding-top: 20px;
+    padding-top: 60px;
 }
 
 #about {
-    width: 65%;
+    width: 45%;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+#about:hover {
+    background-color: rgba(29, 29, 29, 0.5);
+    transition: background-color .2s ease-in-out;
+}
+
 
 /* Games */
 
 #games h1, #games h2{
-    margin-top: 70px;
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -257,9 +266,11 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+/* Contact Me */
+
 form {
     margin-top: 20px;
-    transition: all 4s ease-in-out;
+    transition: margin .5s ease-in-out;
 }
 
 .form-control {
