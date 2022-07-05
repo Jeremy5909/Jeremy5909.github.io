@@ -31,7 +31,8 @@ $(document).ready(function() {
         moveCount = 0;
     }
 
-    $("#tictactoe #playButton").click(function (){
+    $("#tictactoe #playButton").click(function () {
+        $("#tictactoe #playButton").text("Play!");
         if(hasWinner==1){
             init();
         }
@@ -131,7 +132,7 @@ $(document).ready(function() {
             boardMsg(playerName+" won the game!");
             hasWinner = 1;
             moveCount = 0;
-            $("playButton").text("Play again");
+            $("#playButton").text("Play again");
             return true;
         }
         return false;
