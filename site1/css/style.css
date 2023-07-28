@@ -10,14 +10,13 @@ body {
 }
 
 body.dark-mode {
-    background-image: url("/imgs/hacker-bg.jpg");
+    background-image: url("/site1/imgs/hacker-bg.jpg");
     background-color: rgb(24, 24, 24);
     background-blend-mode: overlay;
     color: rgb(214, 214, 214);
 }
 
-#home {
-    padding-top: 60px;
+#home {    padding-top: 60px;
 }
 
 #about {
