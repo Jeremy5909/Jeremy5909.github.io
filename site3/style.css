@@ -7,14 +7,12 @@ body {
     color: #fff;
 }
 
-
-
 a {
     text-decoration: none;
 }
 
 .topnav {
-    background-color: #333;
+    background-color: #1e1e1e;
     display: flex;
     justify-content: flex-end;
     padding: 20px;
