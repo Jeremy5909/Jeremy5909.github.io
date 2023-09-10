@@ -1,0 +1,22 @@
+{
+    "salt": [
+        {
+            "tags": ["seasoning", "kitchen"]
+        }
+    ],
+    "pepper": [
+        {
+            "tags": ["seasoning", "kitchen"]
+        }
+    ],
+    "forks": [
+        {
+            "tags": ["utensils", "kitchen", "silverware"]
+        }
+    ],
+    "spoons": [
+        {
+            "tags": ["utensils", "kitchen", "silverware"]
+        }
+    ]
+}
