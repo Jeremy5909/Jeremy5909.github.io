@@ -38,16 +38,30 @@ body {
     font-size: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-transform: capitalize;
+    cursor: pointer;
+    transition: background-color 250ms;
+}
+
+#search-results li:hover {
+    background-color: #dddddd;
+    border-color: #6161612e;
+}
+
+#search-results li:active {
+    background-color: #ebebeb;
 }
 
 #item-info {
-    text-transform: capitalize;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 20px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#item-info::first-letter {
+    text-transform: capitalize;
 }
 
 #item-info h2 {

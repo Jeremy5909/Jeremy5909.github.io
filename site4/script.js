@@ -9,10 +9,12 @@ $(document).ready(function () {
         $searchResults.empty();
 
         // Iterate through the itemsData and search for matches
-        for (const item in itemsData) {
-            if (item.toLowerCase().includes(query.toLowerCase())) {
-                const tags = itemsData[item][0].tags.join(", ");
-                const listItem = `<li data-item="${item}">${item}</li>`;
+        for (const itemName in itemsData) {
+            const item = itemsData[itemName][0];
+            const itemTags = item.tags.join(", ");
+
+            if (itemName.toLowerCase().includes(query.toLowerCase()) || itemTags.toLowerCase().includes(query.toLowerCase())) {
+                const listItem = `<li data-item="${itemName}">${itemName}</li>`;
                 $searchResults.append(listItem);
             }
         }
@@ -25,7 +27,8 @@ $(document).ready(function () {
             // Construct the item information HTML
             const infoHTML = `
                 <h2>${itemName}</h2>
-                <p>Tags: ${itemData[0].tags.join(", ")}</p>
+                <p>Tags: ${itemData[0].tags.join(", ").replace(/\b\w/g , function(m){ return m.toUpperCase(); } )}</p>
+                <p>Location: ${itemData[0].location}</p>
             `;
             $itemInfo.html(infoHTML);
         }
