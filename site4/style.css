@@ -1,0 +1,20 @@
+#top-bar
+{
+    height: 50px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+}
+
+#search
+{
+    font-size: large;
+    border-radius: 10px;
+    
+    position: absolute;
+    margin:0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 70%;
+}
