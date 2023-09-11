@@ -50,18 +50,24 @@ $(document).ready(function () {
     });
 });
 
+let showing = false;
 function new_item()
 {
     const new_item_popup = `
     <div id="new-item-popup">
-    <h2>Create New Item</h2>
-    <form>
-        <input type="text" name="item-name" placeholder="Spoon">
-        <input type="text" name="item-tags" placeholder="utensils,kitchen">
-        <input type="text" name="item-location" placeholder="kitchen">
-        <input type="file" accept="image/*" name="item-image-location">
-    </form>
-</div>
+        <h2>Create New Item</h2>
+        <form>
+            Name: <input type="text" name="item-name" placeholder="Spoon"><br>
+            Tags: <input type="text" name="item-tags" placeholder="utensils,kitchen"><br>
+            Location:<input type="text" name="item-location" placeholder="kitchen"><br>
+            Image: <input type="file" accept="image/*" name="item-image-location">
+        </form>
+    </div>
     `;
-    $("body").append(new_item_popup);
+    if (!showing) {
+        $("body").append(new_item_popup);
+    } else {
+        $("#new-item-popup").remove();
+    }
+    showing = !showing;
 }
