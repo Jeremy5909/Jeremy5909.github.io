@@ -49,3 +49,19 @@ $(document).ready(function () {
         });
     });
 });
+
+function new_item()
+{
+    const new_item_popup = `
+    <div id="new-item-popup">
+    <h2>Create New Item</h2>
+    <form>
+        <input type="text" name="item-name" placeholder="Spoon">
+        <input type="text" name="item-tags" placeholder="utensils,kitchen">
+        <input type="text" name="item-location" placeholder="kitchen">
+        <input type="file" accept="image/*" name="item-image-location">
+    </form>
+</div>
+    `;
+    $("body").append(new_item_popup);
+}
