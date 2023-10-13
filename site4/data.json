@@ -2,25 +2,25 @@
     "salt": [
         {
             "tags": ["seasoning", "kitchen"],
-            "location": ["Kitchen drawer one"]
+            "location": "Kitchen drawer one"
         }
     ],
     "pepper": [
         {
             "tags": ["seasoning", "kitchen"],
-            "location": ["Kitchen drawer two"]
+            "location": "Kitchen drawer two"
         }
     ],
     "forks": [
         {
             "tags": ["utensils", "kitchen", "silverware"],
-            "location": ["Kitchen drawer three"]
+            "location": "Kitchen drawer three"
         }
     ],
     "spoons": [
         {
             "tags": ["utensils", "kitchen", "silverware"],
-            "location": ["Kitchen drawer four"]
+            "location": "Kitchen drawer four"
         }
     ]
 }

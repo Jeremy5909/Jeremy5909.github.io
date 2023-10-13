@@ -11,8 +11,8 @@ $(document).ready(function () {
         // Iterate through the itemsData and search for matches
         for (const itemName in itemsData) {
             const item = itemsData[itemName][0];
+            console.log(item);
             const itemTags = item.tags.join(", ");
-
             if (itemName.toLowerCase().includes(query.toLowerCase()) || itemTags.toLowerCase().includes(query.toLowerCase())) {
                 const listItem = `<li data-item="${itemName}">${itemName}</li>`;
                 $searchResults.append(listItem);
@@ -29,6 +29,7 @@ $(document).ready(function () {
                 <h2>${itemName}</h2>
                 <p>Tags: ${itemData[0].tags.join(", ").replace(/\b\w/g , function(m){ return m.toUpperCase(); } )}</p>
                 <p>Location: ${itemData[0].location}</p>
+
             `;
             $itemInfo.html(infoHTML);
         }
@@ -56,11 +57,17 @@ function new_item()
     const new_item_popup = `
     <div id="new-item-popup">
         <h2>Create New Item</h2>
-        <form>
-            Name: <input type="text" name="item-name" placeholder="Spoon"><br>
-            Tags: <input type="text" name="item-tags" placeholder="utensils,kitchen"><br>
-            Location:<input type="text" name="item-location" placeholder="kitchen"><br>
-            Image: <input type="file" accept="image/*" name="item-image-location">
+        <form autocomplete="off">
+            Name:<br>
+            <input type="text" name="item-name" placeholder="Spoon"><br>
+            Tags:<br>
+            <input type="text" name="item-tags" placeholder="utensils,kitchen"><br>
+            Location:<br>
+            <input type="text" name="item-location" placeholder="kitchen"><br>
+            Image:<br>
+            <input type="file" accept="image/*" name="item-image-location" id="selectedFile" style="display: none;">
+            <input type="button" value="Browse..." id="fake-button" onclick="document.getElementById('selectedFile').click();" /><br>
+            <button type="submit" id="submit-new-item">Done</button>
         </form>
     </div>
     `;
@@ -71,3 +78,5 @@ function new_item()
     }
     showing = !showing;
 }
+
+

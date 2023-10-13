@@ -14,7 +14,7 @@ a {
 }
 
 #top-bar {
-    background-color: #007bff;
+    background-color: #2a78cd;
     color: #fff;
     padding: 10px;
     display: flex;
@@ -82,12 +82,14 @@ a {
     margin-bottom: 10px;
 }
 
-#new-item {
+
+#new-item-button {
     font-size: 50px;
     color: white;
     padding: 5px;
     padding-right: 0px;
 }
+/* New Item Popup */
 
 #new-item-popup {
     position: absolute;
@@ -101,8 +103,31 @@ a {
     background-color: #bababa;
     border: 3px solid #333333;
     padding: 10px;
+
+    font-size: larger;
+    line-height: 150%;
+}
+
+#new-item-popup input {
+    background-color: #ffffffc7;
+    border-width: 0;
+    border-radius:7.5px;
+    font-size: 16px;
 }
 
 #new-item-popup h2 {
     text-align: center;
+}
+
+#fake-button {
+    cursor: pointer;
+    transition: background-color 250ms;
+}
+
+#fake-button:hover {
+    background-color: #d0d0d0;
+}
+
+#fake-button:active {
+    background-color: #b5b5b5;
 }
