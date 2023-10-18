@@ -1,24 +1,28 @@
 {
     "salt": [
         {
+            "name": "salt",
             "tags": ["seasoning", "kitchen"],
             "location": "Kitchen drawer one"
         }
     ],
     "pepper": [
         {
+            "name": "pepper",
             "tags": ["seasoning", "kitchen"],
             "location": "Kitchen drawer two"
         }
     ],
     "forks": [
         {
+            "name": "forks",
             "tags": ["utensils", "kitchen", "silverware"],
             "location": "Kitchen drawer three"
         }
     ],
     "spoons": [
         {
+            "name": "spoons",
             "tags": ["utensils", "kitchen", "silverware"],
             "location": "Kitchen drawer four"
         }
