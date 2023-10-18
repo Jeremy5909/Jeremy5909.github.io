@@ -18,5 +18,10 @@
     "name": "spoons",
     "tags": ["utensils", "kitchen", "silverware"],
     "location": "Kitchen drawer four"
+  },
+  {
+    "name": "knives",
+    "tags": ["utensils", "kitchen", "silverware"],
+    "location": "Kitchen drawer five"
   }
 ]
