@@ -16,7 +16,7 @@ import SearchWidget from "../components/Search Widget.astro";
 
         const FUSE_OPTIONS = {
             includeScore: true,
-            threshold: 0.2,
+            threshold: 0.4,
             keys: [
                 {
                     name: "name",
@@ -24,7 +24,7 @@ import SearchWidget from "../components/Search Widget.astro";
                 },
                 {
                     name: "tags",
-                    weight: 0.7,
+                    weight: 0.75,
                 },
                 {
                     name: "location",
