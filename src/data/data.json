@@ -1,27 +1,58 @@
 [
-  {
-    "name": "salt",
-    "tags": ["seasoning", "kitchen"],
-    "location": "Kitchen drawer one"
-  },
-  {
-    "name": "pepper",
-    "tags": ["seasoning", "kitchen"],
-    "location": "Kitchen drawer two"
-  },
-  {
-    "name": "forks",
-    "tags": ["utensils", "kitchen", "silverware"],
-    "location": "Kitchen drawer three"
-  },
-  {
-    "name": "spoons",
-    "tags": ["utensils", "kitchen", "silverware"],
-    "location": "Kitchen drawer four"
-  },
-  {
-    "name": "knives",
-    "tags": ["utensils", "kitchen", "silverware"],
-    "location": "Kitchen drawer five"
-  }
-]
+    {
+      "name": "salt",
+      "tags": ["seasoning", "ingredient"],
+      "location": "Kitchen drawer one"
+    },
+    {
+      "name": "pepper",
+      "tags": ["seasoning", "ingredient"],
+      "location": "Kitchen drawer two"
+    },
+    {
+      "name": "coffee",
+      "tags": ["beverage", "ingredient"],
+      "location": "Pantry shelf one"
+    },
+    {
+      "name": "sugar",
+      "tags": ["sweetener", "ingredients"],
+      "location": "Kitchen cupboard"
+    },
+    {
+      "name": "bread",
+      "tags": ["food", "bakery"],
+      "location": "Bread box"
+    },
+    {
+      "name": "milk",
+      "tags": ["dairy", "beverage"],
+      "location": "Refrigerator"
+    },
+    {
+      "name": "eggs",
+      "tags": ["dairy", "protein"],
+      "location": "Refrigerator"
+    },
+    {
+      "name": "spaghetti",
+      "tags": ["noodle","pasta", "ingredients"],
+      "location": "Pantry shelf two"
+    },
+    {
+      "name": "toothbrush",
+      "tags": ["personal care"],
+      "location": "Bathroom"
+    },
+    {
+      "name": "towels",
+      "tags": ["cleaning, linens"],
+      "location": "Linen closet"
+    },
+    {
+        "name": "soap",
+        "tags": ["cleaning"],
+        "location": "Kitchen counter"
+    }
+  ]
+  
