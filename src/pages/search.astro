@@ -6,8 +6,28 @@ import SearchWidget from "../components/Search Widget.astro";
     <script>
         // Change text on page
         import DOMPurify from "dompurify";
+        import Fuse from "fuse.js";
 
         let SEARCH_DATA;
+        let FUSE_INSTANCE;
+        const FUSE_OPTIONS = {
+            includeScore: true,
+            threshold: .2,
+            keys: [
+                {
+                    name: "name",
+                    weight: 1,
+                },
+                {
+                    name: "tags",
+                    weight: 0.7,
+                },
+                {
+                    name: "location",
+                    weight: 0.5,
+                }
+            ]
+        }
 
         const SPINNER = `<svg xmlns="http://www.w3.org/2000/svg" class="animate-spin m-auto my-4" width="32" height="32" fill="#a8a8a8" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #9f9991;"><path d="M236,128a108,108,0,0,1-216,0c0-42.52,24.73-81.34,63-98.9A12,12,0,1,1,93,50.91C63.24,64.57,44,94.83,44,128a84,84,0,0,0,168,0c0-33.17-19.24-63.43-49-77.09A12,12,0,1,1,173,29.1C211.27,46.66,236,85.48,236,128Z"></path></svg>`
 
@@ -25,6 +45,8 @@ import SearchWidget from "../components/Search Widget.astro";
                 ? `Search results for "${search}"`
                 : "Search";
         }
+
+        // Get Data.json
         async function fetchSearchResults(search){
             if(search.length === 0) return;
             searchResults.innerHTML = SPINNER;
@@ -35,28 +57,35 @@ import SearchWidget from "../components/Search Widget.astro";
                         throw new Error("Something went wrong... Please try again");
                     }
                     const data = await res.json();
-                    console.log(data);
+                    SEARCH_DATA = data;
                 } catch(e){
                     console.error(e);
                 }
             }
+
+            if(SEARCH_DATA && !FUSE_INSTANCE){
+                FUSE_INSTANCE = new Fuse(SEARCH_DATA, FUSE_OPTIONS);
+            }
+
+            if(!FUSE_INSTANCE) return;
+            const searchResult = FUSE_INSTANCE.search(search);
+            console.log("results", searchResult);
         }
 
         // Update title, readout, and url on submit
         window.addEventListener("DOMContentLoaded", () => {
             const urlParams = DOMPurify.sanitize(new URLSearchParams(window.location.search).get("q"));
-            search.value = urlParams;
-            updateTexts(urlParams);
             fetchSearchResults(urlParams);
-        })
+            updateTexts(urlParams);
+            search.value = urlParams;
+        });
 
         // Update title and readout on input
         window.addEventListener("input", () => {
             const searchTerm = DOMPurify.sanitize(search.value);
             updateTexts(searchTerm);
-            // fetchSearchResults(searchTerm);
-        })
-
+            fetchSearchResults(searchTerm);
+        });
     </script>
     
     <h2 id="searchReadout" class="text-4xl font-bsold text-center mb-4"></h2>
