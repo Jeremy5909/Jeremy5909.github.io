@@ -1,8 +1,6 @@
 <aside>
-    <form class="grid gap-4 border-slate-800 bg-slate-900 border-4">
-        <div>
-            <label for="search" class="font-bold text-center">Search</label>
-        </div>
+    <form class="border-slate-700 bg-slate-900 border-4 text-center">
+        <label for="search" class="font-bold">Search</label>
         <input
             type="search"
             required
@@ -12,11 +10,12 @@
             id="search"
             placeholder="Enter a search term..."
             autocomplete="off"
-            class="bg-slate-700">
+            class="bg-slate-800 w-full">
     </form>
 </aside>
 
 <script>
+    // Slug
     import DOMPurify from "dompurify"
     const form = document.querySelector("form")
     form?.addEventListener("submit", (e) => {
