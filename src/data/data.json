@@ -31,7 +31,7 @@
     },
     {
       "name": "eggs",
-      "tags": ["dairy", "protein"],
+      "tags": ["food", "dairy", "protein"],
       "location": "Refrigerator"
     },
     {
@@ -53,6 +53,47 @@
         "name": "soap",
         "tags": ["cleaning"],
         "location": "Kitchen counter"
-    }
+    },
+    {
+        "name": "tape",
+        "tags": ["tools"],
+        "location": "Office drawer"
+    },
+    {
+        "name": "scissors",
+        "tags": ["tools"],
+        "location": "Desk drawer"
+      },
+      {
+        "name": "flashlight",
+        "tags": ["tools"],
+        "location": "Utility closet"
+      },
+      {
+        "name": "screwdriver",
+        "tags": ["tools"],
+        "location": "Toolbox"
+      },
+      {
+        "name": "scissors",
+        "tags": ["stationery"],
+        "location": "Desk drawer"
+      },
+      {
+        "name": "shampoo",
+        "tags": ["personal care"],
+        "location": "Bathroom"
+      },
+      {
+        "name": "flashlight",
+        "tags": ["tools", "emergency"],
+        "location": "Utility closet"
+      },
+      {
+        "name": "utensils",
+        "tags": ["tools, spoon, fork, knife, plastic, metal"],
+        "location": "ktichen drawer three"
+      }
+    
   ]
   
