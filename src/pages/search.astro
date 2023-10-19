@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
 import SearchWidget from "../components/Search Widget.astro";
+
 ---
 
 <Layout title="Results">
@@ -37,7 +39,7 @@ import SearchWidget from "../components/Search Widget.astro";
 
         const search = document.querySelector("#search") as HTMLInputElement;
         const searchReadout = document.querySelector("#searchReadout");
-        const searchResults = document.querySelector("#searchResults");
+        const resultsList = document.querySelector("#searchResults");
 
         function updateTexts(search) {
             searchReadout.textContent = search
@@ -48,53 +50,83 @@ import SearchWidget from "../components/Search Widget.astro";
                 : "Search";
         }
 
+        function updateSearchPageURL(search){
+            const url = new URL(window.location.href);
+            url.searchParams.set("q", search);
+            window.history.replaceState(null, "", url);
+        }
+
+        function generateSearchList(results){
+            return results.map((r) => {
+                const name=Object.values(r.item)[0];
+                console.log(name);
+                return `<li>
+                        <b>{name}</b>
+                        </li>
+                        `
+            })
+        }
+
         // Get Data.json
         async function fetchSearchResults(search) {
             if (search.length === 0) return;
-            searchResults.innerHTML = SPINNER;
             if (!SEARCH_DATA) {
                 try {
                     const res = await fetch("./src/data/data.json");
                     if (!res.ok) {
                         throw new Error(
                             "Something went wrong... Please try again"
-                        );
+                            );
+                        }
+                        const data = await res.json();
+                        SEARCH_DATA = data;
+                    } catch (e) {
+                        console.error(e);
                     }
-                    const data = await res.json();
-                    SEARCH_DATA = data;
-                } catch (e) {
-                    console.error(e);
                 }
+                
+                if (SEARCH_DATA && !FUSE_INSTANCE) {
+                    FUSE_INSTANCE = new Fuse(SEARCH_DATA, FUSE_OPTIONS);
+                }
+                
+                if (!FUSE_INSTANCE) return;
+                const searchResult = FUSE_INSTANCE.search(search);
+                resultsList.innerHTML = 
+                    searchResult.length > 0
+                        ? generateSearchList(searchResult)
+                        : "No results found...";
             }
-
-            if (SEARCH_DATA && !FUSE_INSTANCE) {
-                FUSE_INSTANCE = new Fuse(SEARCH_DATA, FUSE_OPTIONS);
-            }
-
-            if (!FUSE_INSTANCE) return;
-            const searchResult = FUSE_INSTANCE.search(search);
-            console.log("results", searchResult);
-        }
-
-        // Update title, readout, and url on submit
-        window.addEventListener("DOMContentLoaded", () => {
-            const urlParams = DOMPurify.sanitize(
-                new URLSearchParams(window.location.search).get("q")
-            );
-            fetchSearchResults(urlParams);
-            updateTexts(urlParams);
-            search.value = urlParams;
-        });
-
-        // Update title and readout on input
-        window.addEventListener("input", () => {
+            
+            // Update title, readout, and url on submit
+            window.addEventListener("DOMContentLoaded", () => {
+                const urlParams = DOMPurify.sanitize(
+                    new URLSearchParams(window.location.search).get("q")
+                    );
+                    fetchSearchResults(urlParams);
+                    updateTexts(urlParams);
+                    search.value = urlParams;
+                });
+                
+                // Update title and readout on input
+                window.addEventListener("input", () => {
             const searchTerm = DOMPurify.sanitize(search.value);
             updateTexts(searchTerm);
             fetchSearchResults(searchTerm);
+            updateSearchPageURL(searchTerm)
         });
     </script>
 
     <h2 id="searchReadout" class="text-4xl font-bsold text-center mb-4"></h2>
     <SearchWidget />
-    <ul class="m-auto" id="searchResults"></ul>
+    <section>
+        <ul class="m-auto" id="searchResults">
+            {
+                items.map((item) => (
+                    <li>
+                        <b>{item.data.title}</b>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
 </Layout>
