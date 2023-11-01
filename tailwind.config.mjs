@@ -6,7 +6,15 @@ export default {
 			colors: {
 				"black-russian": "#13151a"
 			},
+			borderWidth: {
+				DEFAULT: '1px',
+				'1': '1px',
+				'6': '6px'
+			}
 		},
+
 	},
-	plugins: [],
+	plugins: [
+		require("tailwindcss-3d"),
+	],
 }
