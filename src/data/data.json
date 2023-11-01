@@ -92,8 +92,12 @@
       {
         "name": "utensils",
         "tags": ["tools, spoon, fork, knife, plastic, metal"],
-        "location": "ktichen drawer three"
+        "location": "Kitchen drawer three"
+      },
+      {
+        "name": "crockery",
+        "tags": ["bowl, plate, cup, dinnerware, dishes"],
+        "location": "Kitchen drawer three"
       }
-    
   ]
   
