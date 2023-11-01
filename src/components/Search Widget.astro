@@ -1,30 +1,55 @@
-<aside>
-    <form class="border-slate-700 bg-slate-900 border-4 text-center min-w-max max-w-3xl m-auto">
-        <label for="search" class="font-bold">Search</label>
-        <input
-            type="search"
-            required
-            min="2"
-            max="24"
-            name="search"
-            id="search"
-            placeholder="Enter a search term..."
-            autocomplete="off"
-            class="bg-slate-800 w-full h-10">
-    </form>
-</aside>
+---
+import Item from "./Item.astro";
+---
+
+
+
+<form class="border-slate-600 bg-slate-800 border-4 text-center min-w-max max-w-3xl m-auto rounded-lg">
+    <label for="search" class="font-bold">Search</label>
+    <input
+        type="search"
+        required
+        name="search"
+        id="search"
+        placeholder="Enter a search term..."
+        autocomplete="off"
+        class="bg-slate-700 w-full h-10">
+</form>
+
+<div class=" bg-slate-500 rounded-xl p-0.5 my-5 shadow-inner">
+    <Item name="abc" location="abc" tags={["a,b,c"]}/>
+    <Item name="xyz" location="xyz" tags={["x,y,z"]}/>
+    <Item name="123" location="123" tags={["1,2,3"]}/>
+</div>
 
 <script>
-    // Slug
-    import DOMPurify from "dompurify"
-    const form = document.querySelector("form")
-    form?.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const searchTerm = DOMPurify.sanitize(formData.get("search")?.toString());
-        if(!searchTerm || searchTerm.length === 0) return;
-        const url = new URL("/search", window.location.origin);
-        url.searchParams.set("q", searchTerm);
-        window.location.assign(url.toString())
-    })
+    import Fuse from "fuse.js";
+    import DOMPurify from "dompurify";
+    import data from "../data/data.json";
+     
+    const searchElement = document.querySelector("#search") as HTMLInputElement; 
+    const fuse = new Fuse(data, {
+        includeScore: true,
+        threshold: 0.4,
+        keys: [
+                {
+                    name: "name",
+                    weight: 1,
+                },
+                {
+                    name: "tags",
+                    weight: 0.8,
+                },
+                {
+                    name: "location",
+                    weight: 0.5,
+                }
+            ]  
+        }
+    );
+
+    window.addEventListener("input", () => {
+        const searchTerm = DOMPurify.sanitize(searchElement.value);
+        console.log(fuse.search(searchTerm));
+    });
 </script>
