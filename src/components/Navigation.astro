@@ -1,0 +1,10 @@
+<div>
+    {[
+     ["Home", "/"],
+     ["Directory", "/directory"],
+     ["About", "/about"]   
+    ].map(([title,url]) => (
+        <a href={url} class="text-center text-lg font-bold uppercase hover:bg-slate-600 inline-block px-4 py-5 active:bg-white rounded">{title}</a>
+    ))
+    }
+</div>
