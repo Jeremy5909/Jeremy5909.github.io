@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Item from "../components/Item.astro"
+import data from "../data/data.json"
+---
+
+<Layout title="Directory">
+    <ul>
+        {
+            data
+                .sort((a,b) => a.name.localeCompare(b.name))
+                .map(({name, location,tags}) => (
+                <li>
+                    <Item name={name} location={location} tags={tags}/>   
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
