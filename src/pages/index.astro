@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SearchWidget from '../components/Search Widget.astro';
+import Layout from "../layouts/Layout.astro";
+import SearchWidget from "../components/Search Widget.svelte";
 ---
 
 <Layout title="Thing Finder">
-	<SearchWidget />
+  <SearchWidget client:load />
 </Layout>

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Item from "../components/Item.astro"
+import Item from "../components/Item.svelte"
 import data from "../data/data.json"
 ---
 
@@ -11,7 +11,7 @@ import data from "../data/data.json"
                 .sort((a,b) => a.name.localeCompare(b.name))
                 .map(({name, location,tags}) => (
                 <li>
-                    <Item name={name} location={location} tags={tags}/>   
+                    <Item client:load name={name} location={location} tags={tags}/>   
                 </li>
             ))
         }
