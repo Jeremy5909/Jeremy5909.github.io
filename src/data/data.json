@@ -1,103 +1,92 @@
 [
-    {
-      "name": "salt",
-      "tags": ["seasoning", "ingredient"],
-      "location": "Kitchen drawer one"
-    },
-    {
-      "name": "pepper",
-      "tags": ["seasoning", "ingredient"],
-      "location": "Kitchen drawer two"
-    },
-    {
-      "name": "coffee",
-      "tags": ["beverage", "ingredient"],
-      "location": "Pantry shelf one"
-    },
-    {
-      "name": "sugar",
-      "tags": ["sweetener", "ingredients"],
-      "location": "Kitchen cupboard"
-    },
-    {
-      "name": "bread",
-      "tags": ["food", "bakery"],
-      "location": "Bread box"
-    },
-    {
-      "name": "milk",
-      "tags": ["dairy", "beverage"],
-      "location": "Refrigerator"
-    },
-    {
-      "name": "eggs",
-      "tags": ["food", "dairy", "protein"],
-      "location": "Refrigerator"
-    },
-    {
-      "name": "spaghetti",
-      "tags": ["noodle","pasta", "ingredients"],
-      "location": "Pantry shelf two"
-    },
-    {
-      "name": "toothbrush",
-      "tags": ["personal care"],
-      "location": "Bathroom"
-    },
-    {
-      "name": "towels",
-      "tags": ["cleaning, linens"],
-      "location": "Linen closet"
-    },
-    {
-        "name": "soap",
-        "tags": ["cleaning"],
-        "location": "Kitchen counter"
-    },
-    {
-        "name": "tape",
-        "tags": ["tools"],
-        "location": "Office drawer"
-    },
-    {
-        "name": "scissors",
-        "tags": ["tools"],
-        "location": "Desk drawer"
-      },
-      {
-        "name": "flashlight",
-        "tags": ["tools"],
-        "location": "Utility closet"
-      },
-      {
-        "name": "screwdriver",
-        "tags": ["tools"],
-        "location": "Toolbox"
-      },
-      {
-        "name": "scissors",
-        "tags": ["stationery"],
-        "location": "Desk drawer"
-      },
-      {
-        "name": "shampoo",
-        "tags": ["personal care"],
-        "location": "Bathroom"
-      },
-      {
-        "name": "flashlight",
-        "tags": ["tools", "emergency"],
-        "location": "Utility closet"
-      },
-      {
-        "name": "utensils",
-        "tags": ["tools, spoon, fork, knife, plastic, metal"],
-        "location": "Kitchen drawer three"
-      },
-      {
-        "name": "crockery",
-        "tags": ["bowl, plate, cup, dinnerware, dishes"],
-        "location": "Kitchen drawer three"
-      }
-  ]
-  
+  {
+    "name": "salt",
+    "tags": ["seasoning", "ingredient"],
+    "location": "Kitchen drawer one"
+  },
+  {
+    "name": "pepper",
+    "tags": ["seasoning", "ingredient"],
+    "location": "Kitchen drawer two"
+  },
+  {
+    "name": "coffee",
+    "tags": ["beverage", "ingredient"],
+    "location": "Pantry shelf one"
+  },
+  {
+    "name": "sugar",
+    "tags": ["sweetener", "ingredients"],
+    "location": "Kitchen cupboard"
+  },
+  {
+    "name": "bread",
+    "tags": ["food", "bakery"],
+    "location": "Bread box"
+  },
+  {
+    "name": "milk",
+    "tags": ["dairy", "beverage"],
+    "location": "Refrigerator"
+  },
+  {
+    "name": "eggs",
+    "tags": ["food", "dairy", "protein"],
+    "location": "Refrigerator"
+  },
+  {
+    "name": "spaghetti",
+    "tags": ["noodle", "pasta", "ingredients"],
+    "location": "Pantry shelf two"
+  },
+  {
+    "name": "toothbrush",
+    "tags": ["personal care"],
+    "location": "Bathroom"
+  },
+  {
+    "name": "towels",
+    "tags": ["cleaning, linens"],
+    "location": "Linen closet"
+  },
+  {
+    "name": "soap",
+    "tags": ["cleaning"],
+    "location": "Kitchen counter"
+  },
+  {
+    "name": "tape",
+    "tags": ["tools"],
+    "location": "Office drawer"
+  },
+  {
+    "name": "scissors",
+    "tags": ["tools"],
+    "location": "Desk drawer"
+  },
+  {
+    "name": "flashlight",
+    "tags": ["tools"],
+    "location": "Utility closet"
+  },
+  {
+    "name": "screwdriver",
+    "tags": ["tools"],
+    "location": "Toolbox"
+  },
+  {
+    "name": "shampoo",
+    "tags": ["personal care"],
+    "location": "Bathroom"
+  },
+  {
+    "name": "utensils",
+    "tags": ["tools, spoon, fork, knife, plastic, metal"],
+    "location": "Kitchen drawer three"
+  },
+  {
+    "name": "crockery",
+    "tags": ["bowl, plate, cup, dinnerware, dishes"],
+    "location": "Kitchen drawer three"
+  }
+]
