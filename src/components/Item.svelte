@@ -19,29 +19,28 @@ const {name,location,tags} = Astro.props;
       );
 
       // Adjust the constrain value relative to screen size.
-      const constrain = screenDiagonal / 10; // Adjust the divisor as needed
+      const constrain = screenDiagonal / 10;
 
       const calcX = -(y - box.y - box.height / 2) / constrain;
       const calcY = (x - box.x - box.width / 2) / constrain;
 
       // Adjust the angles to make the rotation more balanced.
-      const rotateXValue = calcX * 5; // Set to 1
-      const rotateYValue = calcY * 1; // Adjust this factor as needed
+      const rotateXValue = calcX * 5;
+      const rotateYValue = calcY;
 
       // Adjust the perspective value to make the text closer or farther in 3D space.
-      const perspectiveValue = 100; // You can change this value as needed
 
-      return `perspective(${perspectiveValue}px) rotateX(${rotateXValue}deg) rotateY(${rotateYValue}deg)`;
+      return `perspective(100px) rotateX(${rotateXValue}deg) rotateY(${rotateYValue}deg)`;
     }
 
     function transformElement(el, xy) {
       const [x, y] = xy;
-      el.style.transition = "transform 0.3s"; // Adjust the duration as needed
+      el.style.transition = "transform 0.3s";
       el.style.transform = getTransform(x, y, el);
     }
 
     elements.forEach((element) => {
-      const elementElement = element as HTMLElement; // Renamed to elementElement
+      const elementElement = element as HTMLElement;
       elementElement.onmousemove = function (e) {
         const xy = [e.clientX, e.clientY];
         window.requestAnimationFrame(function () {
@@ -50,11 +49,6 @@ const {name,location,tags} = Astro.props;
       };
 
       elementElement.onmouseout = function () {
-        // Reset the transform property after a short delay to give the appearance of a smooth transition.
-        // setTimeout(() => {
-        //     elementElement.style.transition = 'transform 0.3s'; // Adjust the duration as needed
-        //     elementElement.style.transform = 'translate(0, 0)';
-        // }, 10); // Adjust the delay time as needed
         elementElement.style.transform = "translate(0,0)";
       };
     });

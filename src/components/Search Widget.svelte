@@ -49,7 +49,7 @@
   />
 </form>
 
-<div id="itemContainer" class="bg-slate-500 rounded-xl p-0.5 my-5 shadow-inner">
+<div id="itemContainer" class="bg-slate-500 rounded-xl p-0.5 my-5 shadow-inner empty:invisible">
   {#each results as r}
     <Item name={r.item.name} location={r.item.location} tags={r.item.tags} />
   {/each}
